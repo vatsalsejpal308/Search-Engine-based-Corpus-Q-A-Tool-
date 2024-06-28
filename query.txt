@@ -1,0 +1,1 @@
+I have a very huge corpus of collection of Gandhi's books. I have a question and its answer lies within the corpus. I can not feed the whole corpus to you and hence based on the question : "" tell me how many paragraphs should I feed to you in order to get a very relevant answer. Your answer must be in range 3 - 6 and only respond with a number nothing else.
