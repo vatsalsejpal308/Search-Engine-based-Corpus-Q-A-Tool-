@@ -12,7 +12,7 @@ int main(){
 
     for(int i = 1; i <= num_books; i++){
 
-        // std::cout << "Inserting book " << i << std::endl;
+        std::cout << "Inserting book " << i << std::endl;
 
         std::string filename = "mahatma-gandhi-collected-works-volume-";
         filename += to_string(i);
@@ -75,7 +75,7 @@ int main(){
 
     }
     cout<<"inserted all the books"<<endl;
-    string question = "What were the views of Mahatma on Partition?";
+    
 
     /*
         Part-1 : Get the top-k paragraphs
@@ -100,34 +100,10 @@ int main(){
     /*
         Part-2 : Query the LLM
     */
-    int choice;
-    cout<<"CHATGPT OR BARD (1 / 2) : )";
-    cin>>choice;
+    string question = "What were the views of Mahatma on Partition?";
+    qna_tool.query(question,"api_call.py");
     cout<<endl;
-
-    string filename;
-    if(choice == 1) {
-        filename = "api_call.py";
-    } else if(choice == 2) {
-        filename = "bard_api_call.py";
-    } else {
-        cout<<"Wrong choice"<<endl;
-        return 0;
-    }
-
-    char response = 'Y';
-    while(response == 'Y' || response == 'y') {
-        std::cout<<"ASK QUESTION : ";
-        string q;
-        getline(cin , q);
-        qna_tool.query(q , filename);
-
-        std::cout<<endl;
-
-        std::cout<<"ANY OTHER QUESTION? (Y / N) : ";
-        cin>>response;
-        std::cout<<endl;
-    }
+    
     
     return 0;
 }
